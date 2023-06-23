@@ -1,0 +1,5 @@
+stream é o arquivo que esta aberto no momento
+o c trata o console como um stream onde stdin é o arquivo de entrada padrao
+geralmente o teclado e stdout é a saida padrao geralmente a tela
+por isso o c não diferencia muito em ES console e ES arquivo, por os trata da
+mesma maneira, para melhor portabilidade.

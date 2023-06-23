@@ -1,0 +1,1 @@
+quando incluirmos stdio.h stdlib.h é incluido implicitamente, o programa será compilado, porém o compilador te dará uns avisos, por meio das dúvidas inclui stdlib.h

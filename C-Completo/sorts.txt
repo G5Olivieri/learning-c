@@ -1,0 +1,20 @@
+bubble sort = pior de todas percorre toda a matriz trocando tudo, muito lenta.
+
+selection sort = percorre toda a matriz porem so troca quando necessario e quanto mais desorganizado estiver a matriz mais lento ele será
+
+insertion sort = alem de ser mais rapidos que os demais ainda é lento dependendo da matriz
+
+shell = muito rapido dependendo do vetor ng(numero de gap), foi até 2084283
+
+quick = muito rapido mais ate que o shell, foi até 2094288, fez em 1s
+
+matriz 1000001 de posicoes
+Quick 0s
+Shell 0s
+Select 44s
+Bubble 200s
+Shaker 132s
+Insert 45s
+
+
+

@@ -1,0 +1,4 @@
+Ponteiro é a mais rápida porém usa mais memoria
+hashing também é razoavelmente rápida porem consome ainda bastante memoria, menos que ponteiro
+arvore é rapida e consome menos memoria, porem mais lenta que as outras duas
+lista lenta porem leve

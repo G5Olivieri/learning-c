@@ -1,0 +1,4 @@
+Lista com 50001 valores
+Bubble Sort = 118s - 427p/s
+Selection Sort = 28s - 1728p/s
+insertion Sort = 15s - 3571p/s

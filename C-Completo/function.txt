@@ -1,0 +1,460 @@
+CURIOSIDADE
+
+conio.h kbhit() - return 0 se tecla nao for pressionada
+
+stdio.h exit(int codigo_de_retorno) - return codigo_de_retorno ao sistema operacional
+
+stdio.h perror(const char* str) - saida de erro
+
+STRING (string.h)
+
+strcpy(char* str1, const char* str2) - copia str2 em str1
+
+strcat(char* str1, const char* str2) - concatena str2 em str1
+
+strlen(const char* str) - retorna o tamanho da str
+
+strcmp(const char* str1, const char* str2) - retorna false se as string sao iguais, maior que zero se str1 >
+que str2 e caso contrario retorna < 0
+
+strchr(const char* str, const char ch) - retorna verdadeiro se ch contem em str
+
+strstr(const char* str1, const char* str2) - retorna verdadeiro se str2 contem em str1
+
+memchr(const void* buffer, int ch, size_t count) - primeira ocorrencia de ch em buffer, retorna NULL se não encontrar nos primeiros count letras
+
+mememp(const void* buf1, const void* buf2, size_t count) - compara os count caracteres
+retorno		significado
+ < 0		buf1 <  buf2
+== 0		buf1 == buf2
+ > 0		buf1 >  buf2
+
+memcpy(void *to, const void* from, size_t count) - copia count char de from para to
+
+memmove(void* to, const void* from, size_t count) - idem memcpy
+
+menset(void* buf, int ch, size_t count) - coloca count ch em buf
+
+strcoll(const char* str1, const char* str2) - compara
+
+strcspn(const char* str1, const char* str2) - tamanho da substring que não contem um caracter em str2
+
+strerror(int errnum) - retorna uma string de erro pre definida
+
+strncat(char* str1, const char* str2, size_t count) - concatena count char
+
+strncpy(char* str1, const char* str2, size_t count) - copia count char
+
+strpbrk(const char* str1, const char* str2) - primeiro char em str1 que contém em str2, não encontra NULL
+
+strrchr(const char* str, int ch) - ultima ocorrencia de ch em str)
+
+strspn(const char* str1, const char* str2) - comprimento da substring que contem todos char em str2
+
+strtok(char* str1, const char* str2) - retorna proxima palavra definida por str2
+
+strxfrm(char* str1, const char* str2, size_t count) - copia count char de str2 em str1
+
+
+CARACTER (ctype.h)
+
+isanum(int ch) - 0 se ch não for alfanumérico, !0 caso contrario
+
+isalpha(int ch) - !0 se ch for letra do alfabeto
+
+iscntrl(int ch) - !0 se ch está entre 0 e 0x1F ou for DEL = 0x7F
+
+isdigit(int ch) - !0 se ch 0-9
+
+isgraph(int ch) - !0 se ch pode ser impresso
+
+islower(int ch) - !0 se ch for minuscula
+
+isprint(int ch) - !0 se ch pode ser impresso
+
+ispunct(int ch) - !0 se ch é de pontuaçao
+
+isspace(int ch) - !0 se ch for espaço tabulação vertical ou horizontal
+
+isupper(int ch) - !0 se for maiscula
+
+isxdigit(int ch) - !0 se for hexadecimal
+
+tolower(int ch) - transforma ch em minuscula
+
+toupper(int ch) - transforma ch em maiuscula
+
+
+E/S - CONSOLE = STREAM STDIN/STDOUT (stdio.h)
+
+getchar() - retorna EOF se ocorreu um erro
+
+putchar(int) - retorna EOF se ocorreu um erro
+
+gets(char* str) - retorna NULL se ocorreu um erro
+
+puts(const char* str) - retorna EOF se ocorreu um erro
+
+printf(const char* str, ...) - retorna a quantidade de parametros
+
+scanf(const char* str, ...) - retorna a quantidade de parametros
+
+sprintf(char* buf, const char* str, ...) - passara str para buf
+
+sscanf(const char* buf, const char* str, ...) - le do buf para ...
+
+
+E/S - ARQUIVO (stdio.h)
+
+ungetc(char ch, FILE* stream) - 
+
+tmpnam(char* name) - nome aleatorio de arquivo para name
+
+tmpfile() - abre arquivo temporario, devolve a stream desse arquivo, retorn NULL em falhas
+
+fopen(const char* nomearq, const char* modo) - retorna NULL se ocorrer erro
+
+fclose(FILE* fp) - retorna 0 se fechou com sucesso
+
+putc(int ch, FILE* fp) - retorna EOF se ocorrer erro
+
+getc(FILE* fp) - retorna EOF se chegou no final do arquivo
+
+feof(FILE* fp) - retorna verdadeiro se fim do arquivo foi atingido
+
+fputs(const char* str, FILE* fp) - EOF se ocorreu um erro
+
+fgets(char* str, int length, FILE* fp) - NULL se ocorrer erro
+
+rewind(FILE* fp)
+
+ferror(FILE* fp) - retorna verdadeiro se ocorreu um erro na ultima operação de arquivo
+
+remove(const char* filename) - retorna false se ocorreu tudo certo e verdadeiro se ocorreu um erro
+
+fflush(FILE* fp) - limpa stream de saida, retorna EOF se deu errado e 0 caso contrario 
+*obs: stdin é stream de entrada do console
+
+fread(void* buffer, size_t num_bytes, size_t count, FILE* fp) - numero de itens lido
+
+fwrite(const void* buffer, size_t num_bytes, size_t count, FILE* fp) - numero de itens escritos
+
+fseek(FILE* fp, long num_bytes, int origin) - devolve 0 quando bem sucedida
+origin = FSEEK_SET = começo do arquivo
+		 FSEEK_CUR = posiçao atual
+		 FSEEK_END = final do arquivo
+
+fprintf(FILE* fp, const char* str, ...) -  
+
+fscanf(FILE* fp, const char* str, ...) - 
+
+freopen(const char* nomearq, const char* modo, FILE* stream) - redireciona streams, retorna NULL em caso de falha
+
+fgetpos(FILE* stream, fpos_t* position) - erro retorna verdadeiro
+
+fsetpos(FILE* stream, const fpos_t* position) - retorna verdadeiro caso erro
+
+ftell(FILE* stream) - numero de byte onde o indicador esta desde o inicio do arquivo
+
+getw(FILE* stream) - proximo inteiro de stream, e avanço o indicador 
+
+putw(int i, FILE* stream) - escrevi i na posicao atual do arquivo
+
+setbuf(FILE* stream, char* buf) - determina o buffer que a stream usará
+
+setvbuf(FILE* stream, char* buf, int mode, size_t size) - zero em caso de sucesso e verdadeiro em falha
+mode	efeito
+_IOFBF	uso total buffer
+_IONBF	um buffer de linha 
+_IOLBF  nenhuma operaçao com buffer
+
+
+E/S - ARQUIVO UNIX (io.h)
+
+open(const char* nomearq, int modo) - retorna int -1 se não pode abrir o arquivo
+modo        efeito
+O_RDONLY	lê
+O_WRONLY	escreve
+O_RDWR		lê/escreve
+
+creat(const char* filename, int modo) - retorna -1 em caso de erro
+
+close(int fd) - -1 se ocorrer erro e 0 se for bem-secedida
+
+write(int fd, const void* buf, unsigned size) - EOF caso erro, e size se ocorreu tudo certo
+
+read(int fd, void* buf, unsigned size) - -1 se ocorre erro e 0 caso o final do arquivo seja encontrado
+
+unlink(const char* filename) - retorna 0 se exluir com sucesso, -1 caso contrario
+
+lseek(int fd, long offset, int origin) - -1 em falhas
+
+
+MATEMÁTICA (math.h)
+
+*obs: sempre em radianos
+
+double acos(double arg) - arco cosseno de arg entre -1 e 1
+
+double asin(double arg) - seno
+
+double atan(double arg) - tangente
+
+double atan2(double y, double x) - arco tangente de y/x
+
+double ceil(double num) - menor inteiro que nao seja menor que num
+
+double cos(double arg) - cosseno de arg
+
+double conh(double arg) - cosseno hiperbolico de arg
+
+double exp(double arg) - log natural e elevado a potencia arg
+
+double fabs(double num) - devolve abs de num
+
+double floor(double num) - devolve o maior inteiro que não seja maior que num
+
+double fmod(double x, double y) - devolve o resto de x/y
+
+double frexp(double num, int* exp) - decompoe o num em uma mantissa, na faixa 0.5 a 1, e em um expoente inteiro tal que num = mantissa * 2^exp
+
+double idexp(double num, int exp) - num*2^exp
+
+double log(double num) - log natural de num
+
+double log10(double num) - log base 10 de num
+
+double modf(double num, double* i) - decompoe num nas suas partes inteiras e fracionaria, i fica com a inteira e devolve a parte fracionaria
+
+double pow(double base, double exp) - retorna base^exp
+
+double sin(double arg) - seno de arg
+
+double sinh(double arg) - seno hiperbolico de arg
+
+double sqrt(double num) - raiz quadrada de num
+
+double tan(double arg) - tangente de arg
+
+double tanh(double arg) - tangente hiperbolica
+
+
+HORA DATA (time.h)
+
+struct tm{
+	int tm_sec;			/* segundos, 0-59 */
+	int tm_min;			/* minutos, 0-59 */
+	int tm_hour; 		/* horas, 0-59 */
+	int tm_mday; 		/* dia do mes, 1-31 */
+	int tm_mon;			/* meses apartir de jan, 0-11 */
+	int tm_year; 		/* anos apartir de 1900 */
+	int tm_wday; 		/* dias apartir de domingo, 0-6 */
+	int tm_yday; 		/* dias apartir de 1 de jan, 0-365 */
+	int tm_isdst;		/* indicador de horario de verao */
+};
+
+time_t e clock_t long int
+
+char* asctime(const struct tm* ptr) - converte a struct em string dia mes data horas:minutos:segundos ano\n\0
+
+clock_t clock() - valor aproximado do tempo de execução do programa
+
+char* ctime(const time_t* time) - igual ao asctime so que com time_t
+
+double difftime(time_t time2, time_t time1) - diferença em segundos de time1 e time2, time2 - time1
+
+struct tm* gmtime(const time_t *time) - retorna time em struct tm, representado pelo horario universal, UTC não for suportado retorna nulo
+
+struct tm* localtime(const time_t *time) - retorna time em struct tm, representado pelo horario local
+
+time_t mktime(struc tm *time) - horario de calendario equivale ao struct 
+
+size_t strftime(char* str, size_t maxsize, const char* fmt, const struct tm* time) - coloca informaçoes de hora e data em str, fmt é o formato decomposto em time, maxsize é o maximo de caracter
+
+formato		substituido
+%a			nome do dia da semana abreviado
+%A			nome do dia da semana completo
+%b			nome do mes abreviado
+%B			nome do mes completo
+%c			string de hora e data padrão
+%d			dia do mes em decimal (1-31)
+%H			hora (0-23)
+%I			hora (0-12)
+%j			dia do ano em decimal (1-366)
+%m			mes em decimal
+%M			minutos em decimal (0-59)
+%P			equivale a local de AM e PM
+%S			segundos em decimal (0-59)
+%U			semana do ano, domingo sendo o primeiro dia (0-52)
+%w			dia da semana em decimal (0-6)
+%W			semana do ano, segundo sendo o primeiro dia(0-53)
+%x			string de data padrão
+%X			string de hora padrão
+%y			ano em decimal sem seculo(0-99)
+%Y			ano incluindo seculo
+%Z			nome da zona de tempo
+%%			o sinal de porcentagem
+
+time_t time(time_t* time) - return calendario do sisteme e passa para o argumento
+
+
+LOCALIZAÇÃO (locale.h)
+
+struct lconv* localeconv(void) - obtem informações locais sobre valores numericos
+
+struct lconv{
+	char *decimal_point; 		/* caracter de ponto decimal nao monetarios*/
+	char *thousands_sep;		/* separador de milhares */
+	char *grouping;				/* especifica o agrupamento para valores nao monetarios */
+	char *int_curr_simbol;		/* simbolo internacional de moeda */
+	char *currency_simbol;		/* simbolo da moeda local */
+	char *mon_decimal_point;	/* decimal monetarios */
+	char *mon_thousands_sep;	/* separador de milhares monetario */
+	char *mon_groupin;			/* agrupamento monetario */
+	char *positive_sign;		/* indicador de valores positivos para monetario */
+	char *negative_sign;		/* indicador de negativo */
+	char int_frac_digits;		/* depois do ponto monetario internacional */
+	char frac_digits;			/* local */
+	char p_cs_precedes;			/* 1 se moede precede valor positivo 0 segue o valor */
+	char p_sep_by_space;		/* 1 se o simbolo da moeda e separado por espaço 0 nao */
+	char n_cs_precedes;			/* 1 negativo, 0 segue o valor */
+	char n_sep_by_space;		/* 1 negativos 0 nao */
+	char p_sign_posn;			/* posiçao do simbolo de valor positivo */
+	char n_sign_posn;			/* negativo */
+};
+
+char* setlocale(int type, const char* locale) - determina a localidade de seu programa, retorna string associada a type
+
+type
+LC_ALL
+LC_COLLATE
+LC_CTYPE
+LC_MONETARY
+LC_NUMERIC
+LC_TIME
+
+
+ALOCAÇÃO DINÂMICA (stdlib.h)
+
+void* calloc(size_t num, size_t size) - aloca num*size, retorna primeiro byte da regiao alocada e nulo em caso de erro
+
+void free(void* ptr) - libera a memoria ao heap
+
+void* malloc(size_t size) - retorna o primeiro byte de uma regiao de memoria do tamanho de size, alocada do heap, retorna NULL se ocorrer erro
+
+void* realloc(void* ptr, size_t size) - realloca no tamanho de size, que pode ser maior ou menor que o tamanho anterior, retorna nulo em caso de erro
+
+
+DIVERSAS
+
+(stdlib.h):
+
+wchat_t = char de 16 bits
+size_t = unsigned
+
+#defines 		o que contem
+NULL			um ponteiro nulo
+RAND_MAX		maximo que pode ser devolvido por rand()
+EXIT_FAILURE	para o exit()
+EXIT_SUCCESS	para o exit()
+MB_CUR_MAX		maximo de byte em wchar_t
+
+void abort() - conclusao imediata e anormal do programa
+
+int abs(int num) - retorna abs de num
+
+int atexit(void (*fun)(void)) - executa fun antes de terminar o programa, retorna 0 se a fun foi registrada, e !0 caso contrario
+
+double atof(const char* str) - converte a str em double
+
+int atoi(const char* str) - converte a str em int
+
+int atol(const char* str) - converte em long int
+
+void* bsearch(const void* key, const void* buf, size_t num, size_t size, int (*compare)(const void*, const void*)); - realiza busca binaria na matriz ordenada em buf, devolvendo o primeiro elemento que coincide com key, num é o numero de elemento na matriz, e o tamanho size. o compare compara o elemento da matriz com a chave
+
+div_t div(int numerator, int denominator) - devolve o quociente e o resto da operação
+
+typedef struct
+{
+	int quot;			/* Quotient.  */
+	int rem;			/* Remainder.  */
+} div_t;
+
+void exit(int exit_code) - sai do programa
+
+char* getenv(const char* name) - devolve uma string definida pelo sistema
+
+char* itoa(int num, const char *str, int radix) - converte num para str sendo a base radix	
+
+long labs(long num) - devolve valor abs de num
+
+ldiv_t ldiv(long numerator, long denominator) - igual ao div()
+
+char* ltoa(int num, const char* str, int radix) - converte num pra str sendo a base radix
+
+int mblen(const char* str, size_t size) - retorna o tamanho em BYTE de um multichar apontada por str, somente os primeiro size caracteres. retorna !0 se str for nulo
+
+size_t mbstowcs(wchat_t *out, const char* in, size_t size) - passa in para out em size tamanho, retorna -1 em erro
+
+int mbtowc(wchar_t *out, const char	*in, size_t size) - mbstowcs() mesma coisa
+
+void qsort(void *buf, size_t num, size_t size, int (*compare)(const void*, const void*)) - ordena a metriz apontada por buf, usando quicksort. num numero do tamanho da matriz, size tamanho em bytes
+
+int rand(void) - gera uma sequencia de números pseudo-randômicos, retorna entre 0 e RAND_MAX
+ 
+void srand(unsigned seed) - define um ponto de partida para rand()
+
+double strtod(const char* start, char **end) - devolve um double de start, e end fica com o resto da string apos double
+
+long strtol(const char* start, char** end, int radix) - radix base 10000L
+
+unsigned long strtoul(const char* start, char **end, int radix - 10000UL
+
+int system(const char *str) - executa str no cmd/terminal, retorna 0 se esta tudo certo
+
+size_t wcstombs(char *out, const wchar_t *in, size_t size) - size char de in em out, retorna -1 em erro
+
+int wctomb(char *out, wchar_int) -
+
+
+
+
+(assert.h):
+
+void assert(int exp) - escreve informações de erro em stderr e aborta o programa se exp = 0
+
+
+(setjmp.h):
+
+setjmp(jmp_buf envbuf) - salva o conteúdo da pilha do sistema, no buffer envbuf, para uso posterior por longnmp()
+
+void longjmp(jmp_buf envbuf, int status) - faz com que a execução do programa continue no ponto da ultima chamada de setjmp(). Essas duas funçoes constituem a maneira de C fornecer um desvio entre funções. longjmp() repoe a pilha como descrito em envbuf, que deve ter sido atribuida a uma chamada anterior setjmp()
+
+
+(signal.h):
+
+int raise(int signal) - envia o signal para o programa executor. devolve zero em caso de secesso
+sinal 		significado
+SIGAABRT	Encerramento anormal do programa
+SIGFPE		Erro matemático
+SIGILL 		Instrução ilegal
+SIGINT		Exigência de interação
+SIGSEGV		Acesso ilegal à memória
+SIGTERM		Pedido de encerramento do programa
+
+void (*signal(int sig, void (*func)(int)))(int) - definará a func, para ser executada se o sinal especificado signal for recebido. 
+func 		significado
+SIG_DFL		Usa o tratador do sinal padrão
+SIG_IGN		Ignora o sinal
+
+
+(stdarg.h):
+
+void va_arg(va_list argptr, type) - proximo arg
+
+type va_start(va_list argptr, last_parm) - ultimo arg da esquerda
+
+void va_end(va_list argptr) - termina 
+
+as tres trabalham em conjunto para garantir que um numero variavel de parametros sejam passados para um funçao
